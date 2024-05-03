@@ -73,8 +73,13 @@ Naive Bayes: `nb`
 XGBoost: `xgb`   
 
 Note that `Flask` is a required module.  
-__The expected output for this is a prediction array that corresponds to the inputs of data and should have the form of the output below:__   
-`{'XGBoost Prediction': ['Low Flood Level', 'High Flood Level'], 'Medium Flood Level'}`  
 
-## Interpreting Results
+__The expected output for this is a prediction array that corresponds to the inputs of data and should have the form of the output below:__   
+`{'XGBoost Prediction': ['Low Flood Level', 'High Flood Level', 'Medium Flood Level']}`  
+The length of the array should correspond with the length of your inputs.  
+
+## Interpreting Results 
+`Low Flood Level`: < 2.94 ft  
+`Medium Flood Level`: between 2.94 and 6.03 ft 
+`High Flood Level`: > 6.03 ft 
 

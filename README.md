@@ -27,7 +27,8 @@ rsp = requests.get("http://172.17.0.1:5000/input_example")
 rsp.json()
 ```
 __where the expected response should look as follows:__ 
-```{'data':
+```
+{'data':
       [{
       'BM_ELEV': 58.37, 
       'SE10YR': 56.2, 

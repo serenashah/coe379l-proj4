@@ -1,6 +1,6 @@
 # coe379l-proj4
 ## Using the container
-__To run the inference server, pull and run the Docker image with the Alt Lenet model:__  
+__To run the inference server, pull and run the Docker image with the classification models:__  
 ```
 docker pull serenashah/proj04-api
 docker run -it --rm -p 5000:5000 serenashah/proj04-api

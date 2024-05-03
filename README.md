@@ -50,14 +50,14 @@ __where the expected response should look as follows:__
 }
 ```
 
-__Variable descriptions:__
-`BM_ELEV`: benchmark elevation (ft) 
-`SE10YR`: Storm Event 10 Years (ft) 
-`SE50YR`: Storm Event 50 Years (ft) 
-`SE100YR`: Storm Event 100 Years (ft) 
-`SE500YR`: Storm Event 500 Years (ft) 
-`POINT_X`: Latitude
-`POINT_Y`: Longitude
+__Variable descriptions:__   
+`BM_ELEV`: benchmark elevation (ft)  
+`SE10YR`: Storm Event 10 Years (ft)  
+`SE50YR`: Storm Event 50 Years (ft)  
+`SE100YR`: Storm Event 100 Years (ft)  
+`SE500YR`: Storm Event 500 Years (ft)  
+`POINT_X`: Latitude  
+`POINT_Y`: Longitude  
 
 __To get a flood level prediction for your input of parameters shown above for a specific classification model, run this in a Python script/Jupyter Notebook:__ 
 ```

@@ -1,9 +1,10 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import pandas as pd
 import numpy as np
 import xgboost as xgb
 import sklearn
 import joblib
+import json
 
 app = Flask(__name__)
 # load models
@@ -19,7 +20,31 @@ def model_info():
       "version": "v1",
       "name": "models",
       "description": "Predict flood levels using information about location, elevation, and Standard Engineering Storm Events",
+      "output": "Array corresponding to inputs that give the prediction of flooding level"
    }
+
+@app.route('/input_example', methods=['GET'])
+def input_example():
+   data = {'data':
+      [{
+      'BM_ELEV': 58.37, 
+      'SE10YR': 56.2, 
+      'SE50YR': 58.7, 
+      'SE100YR': 59.1, 
+      'SE500YR': 60.5, 
+      'POINT_X': -95.49876634, 
+      'POINT_Y': 29.67809883
+      }, 
+      {
+      'BM_ELEV': 58.37, 
+      'SE10YR': 56.2, 
+      'SE50YR': 58.7, 
+      'SE100YR': 59.1, 
+      'SE500YR': 60.5, 
+      'POINT_X': -95.49876634, 
+      'POINT_Y': 29.67809883}]
+   }
+   return jsonify(data), 200, {'Content-Type': 'application/json'}
 
 def preprocess_input(input):
    """
@@ -49,6 +74,9 @@ def run_model(model, d):
 
 @app.route('/models/knn', methods=['POST'])
 def classify_flood_knn():
+   """
+   post route for knn model
+   """
    input = request.json.get('data')
    if not input:
       return {"error": "Please input array"}, 404
@@ -61,6 +89,9 @@ def classify_flood_knn():
 
 @app.route('/models/dt', methods=['POST'])
 def classify_flood_dt():
+   """
+   post route for decision tree model
+   """
    input = request.json.get('data')
    if not input:
       return {"error": "Please input array"}, 404
@@ -73,6 +104,9 @@ def classify_flood_dt():
 
 @app.route('/models/nb', methods=['POST'])
 def classify_flood_nb():
+   """
+   post route for naive bayes model
+   """
    input = request.json.get('data')
    if not input:
       return {"error": "Please input array"}, 404
@@ -85,6 +119,9 @@ def classify_flood_nb():
 
 @app.route('/models/xgb', methods=['POST'])
 def classify_flood_xgb():
+   """
+   post route for xgboost model
+   """
    input = request.json.get('data')
    if not input:
       return {"error": "Please input array"}, 404
@@ -94,7 +131,6 @@ def classify_flood_xgb():
    except Exception as e:
       return {"error": f"Could not process data; details: {e}"}, 404
    return { "XGBoost Prediction": y_pred_output.tolist()}
-
 
 
 # start the development server

@@ -66,7 +66,7 @@ rsp.json()
 ```
 where `input_data` is a list of dictionaries with values for all aforementioned columns.  
 
-__The `model_type`s are as follows:__ 
+__The `model_type`s are as follows:__   
 KNN: `knn`  
 Decision Tree: `dt`  
 Naive Bayes: `nb`  

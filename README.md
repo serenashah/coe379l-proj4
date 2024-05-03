@@ -64,13 +64,13 @@ __To get a flood level prediction for your input of parameters shown above for a
 rsp = requests.post("http://172.17.0.1:5000/models/<model_type>", json={"data": input_data})
 rsp.json()
 ```
-where `input_data` is a list of dictionaries with values for all aforementioned columns. 
+where `input_data` is a list of dictionaries with values for all aforementioned columns.  
 
-The `model_type`s are as follows:
-KNN: `knn` 
-Decision Tree: `dt` 
-Naive Bayes: `nb` 
-XGBoost: `xgb`
+__The `model_type`s are as follows:__ 
+KNN: `knn`  
+Decision Tree: `dt`  
+Naive Bayes: `nb`  
+XGBoost: `xgb`   
 
 Note that `Flask` is a required module.  
 __The expected output for this is a prediction array that corresponds to the inputs of data and should have the form of the output below:__   

@@ -2,8 +2,8 @@
 ## Using the container
 __To run the inference server, pull and run the Docker image with the Alt Lenet model:__  
 ```
-docker pull serenashah/ml-proj03-api
-docker run -it --rm -p 5000:5000 serenashah/ml-proj03-api
+docker pull serenashah/proj04-api
+docker run -it --rm -p 5000:5000 serenashah/proj04-api
 ```
 
 ## HTTP requests

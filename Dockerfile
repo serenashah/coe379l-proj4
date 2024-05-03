@@ -1,4 +1,4 @@
-# Image: serenashah/ml-proj03-api
+# Image: serenashah/proj04-api
 
 FROM python:3.11
 

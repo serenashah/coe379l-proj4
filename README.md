@@ -26,8 +26,8 @@ __To get information on the expected input, run this in a Python script/Jupyter 
 rsp = requests.get("http://172.17.0.1:5000/input_example")
 rsp.json()
 ```
-__where the expected response should look as follows:__
-{'data':
+__where the expected response should look as follows:__ 
+```{'data':
       [{
       'BM_ELEV': 58.37, 
       'SE10YR': 56.2, 
@@ -47,6 +47,7 @@ __where the expected response should look as follows:__
       'POINT_Y': 29.67809883 
        }] 
 }
+```
 
 __Variable descriptions:__
 `BM_ELEV`: benchmark elevation (ft) 

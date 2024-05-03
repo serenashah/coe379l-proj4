@@ -80,6 +80,6 @@ The length of the array should correspond with the length of your inputs.
 
 ## Interpreting Results 
 `Low Flood Level`: < 2.94 ft  
-`Medium Flood Level`: between 2.94 and 6.03 ft 
+`Medium Flood Level`: between 2.94 and 6.03 ft  
 `High Flood Level`: > 6.03 ft 
 
